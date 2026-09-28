@@ -57,9 +57,12 @@ const Hero = () => {
         className="absolute inset-0 opacity-35 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,.08)_0,rgba(255,255,255,.08)_1px,transparent_1px,transparent_64px),repeating-linear-gradient(25deg,rgba(255,255,255,.05)_0,rgba(255,255,255,.05)_1px,transparent_1px,transparent_90px)]"
         aria-hidden="true"
       />
-      <div ref={contentRef} className="relative z-10">
-        <p className="mb-3 text-xs text-white">Est. 2026</p>
-        <p className="max-w-full font-h text-[clamp(2.25rem,7vw,10rem)] leading-[.88] text-white mix-blend-difference">
+      <div
+        ref={contentRef}
+        className="relative z-10 text-white mix-blend-difference"
+      >
+        <p className="mb-3 text-xs">Est. 2026</p>
+        <p className="max-w-full font-h text-[clamp(2.25rem,7vw,10rem)] leading-[.88]">
           Revenue Edge
           <br />
           <span>finance &amp; accounting.</span>

@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Practice", href: "#practice" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "contact" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -20,20 +21,34 @@ export default function Navbar() {
 
       if (currentScrollY <= 12) {
         setIsVisible(true);
+      } else if (currentScrollY < previousScrollY) {
+        setIsVisible(true);
       } else {
-        setIsVisible(currentScrollY < previousScrollY);
+        setIsVisible(false);
       }
 
       previousScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header className={`site-navbar ${isVisible ? "is-visible" : "is-hidden"}`}>
-      <a className="site-navbar-logo" href="/" aria-label="Revenue Edge home">
+    <header
+      className={`site-navbar ${
+        isVisible ? "is-visible" : "is-hidden"
+      }`}
+    >
+      {/* Logo */}
+      <Link
+        className="site-navbar-logo"
+        href="/"
+        aria-label="Revenue Edge home"
+      >
         <Image
           src="/logoSvg.svg"
           alt="Revenue Edge"
@@ -41,17 +56,26 @@ export default function Navbar() {
           height={36}
           priority
         />
-      </a>
+      </Link>
 
+      {/* Navigation */}
       <nav className="site-navbar-links" aria-label="Primary navigation">
         {links.map((link) => (
-          <a key={link.href} href={link.href}>
+          <a
+            className="site-navbar-link"
+            key={link.href}
+            href={link.href}
+          >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <a className="site-navbar-action" href="mailto:hello@revenueedge.com.au">
+      {/* CTA */}
+      <a
+        className="site-navbar-action"
+        href="mailto:hello@revenueedge.com.au"
+      >
         Start a conversation
       </a>
     </header>
