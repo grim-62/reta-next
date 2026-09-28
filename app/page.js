@@ -144,7 +144,7 @@ export default function Home() {
       {/* <!-- Divider --> */}
       <div className="kicker-divider">
         <p className="display-sm text-ink">
-          Precision
+          Contact Section 
           <br />
           in Practice
         </p>
