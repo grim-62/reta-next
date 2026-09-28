@@ -12,8 +12,8 @@ export default function page  () {
          STATEMENT
          ========================================================= --> */}
     <section class="px-5 pt-16 sm:px-8 sm:pt-24">
-      <h1 class="statement reveal">
-        <span class="statement-name">Revenue Edge Tax Accountants</span>
+      <h1 class="statement reveal font-h">
+        <span class="statement-name ">Revenue Edge Tax Accountants</span>
         is a tax and accounting practice driven by clarity, precision, and
         judgment — shaping sound financial decisions at every scale.
       </h1>
@@ -75,7 +75,7 @@ export default function page  () {
       <div class="contact-row">
         <p class="contact-label">Address</p>
         <div>
-          <p class="address-line">Melbourne, Victoria Australia</p>
+          <p class="address-line">Melbourne, Australia</p>
           <p class="address-line">Phone and video appointments Australia-wide</p>
         </div>
       </div>

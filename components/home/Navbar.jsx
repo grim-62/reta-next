@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header className={`site-navbar ${isVisible ? "is-visible" : "is-hidden"}`}>
-      <a className="site-navbar-logo" href="#top" aria-label="Revenue Edge home">
+      <a className="site-navbar-logo" href="/" aria-label="Revenue Edge home">
         <Image
           src="/logoSvg.svg"
           alt="Revenue Edge"
