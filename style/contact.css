@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   Display type scale
+   Reference spec: font-size 69.125px / line-height 55.3px (ratio ~0.8),
+   weight 400 — reproduced here as a fluid, responsive scale rather than a
+   fixed pixel value so it holds up on smaller screens.
+   ========================================================================== */
+.display-hero {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 69.125px);
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+}
+
+.display-md {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.05;
+}
+
+.display-sm {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.1;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero-panel {
+  background: linear-gradient(180deg, #0c1626 0%, #111f33 55%, #16283f 100%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(25deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 90px);
+}
+
+/* ==========================================================================
+   Placeholder photography panel
+   ========================================================================== */
+.photo-panel {
+  background: linear-gradient(135deg, #16283f 0%, #3e6687 100%);
+}
+
+.photo-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0px, rgba(255, 255, 255, 0.06) 1px, transparent 1px, transparent 48px);
+}
+
+/* ==========================================================================
+   Services index table (rows with a reveal-on-hover arrow)
+   ========================================================================== */
+.service-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  font-size: 1rem;
+  color: #111f33;
+  position: relative;
+}
+
+.service-row span:first-child {
+  transition: transform 0.3s ease;
+}
+
+.service-row::after {
+  content: "→";
+  position: absolute;
+  right: -1.25rem;
+  opacity: 0;
+  color: #3e6687;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-4px);
+}
+
+.service-row:hover span:first-child {
+  transform: translateX(6px);
+}
+
+.service-row:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   Section dividers (kicker moments)
+   ========================================================================== */
+.kicker-divider {
+  display: flex;
+  justify-content: center;
+  padding: 7rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #d9dde3;
+}
+
+/* ==========================================================================
+   Services showcase grid — staggered, asymmetric rhythm
+   ========================================================================== */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tile-a, .tile-e { margin-top: 0; }
+  .tile-b, .tile-f { margin-top: 3rem; }
+  .tile-c, .tile-g { margin-top: 6rem; }
+  .tile-d, .tile-h { margin-top: 1.5rem; }
+}
+
+.showcase-tile figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+}
+
+.showcase-tile figcaption span:first-child {
+  color: #111f33;
+  font-weight: 500;
+}
+
+.tile-art {
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+}
+
+.tile-1 { background: linear-gradient(160deg, #111f33, #3e6687); }
+.tile-2 { background: linear-gradient(160deg, #3e6687, #8ea9c2); }
+.tile-3 { background: linear-gradient(160deg, #596273, #111f33); }
+.tile-4 { background: linear-gradient(160deg, #8b929d, #3e6687); }
+.tile-5 { background: linear-gradient(160deg, #111f33, #596273); }
+.tile-6 { background: linear-gradient(160deg, #3e6687, #111f33); }
+.tile-7 { background: linear-gradient(160deg, #8ea9c2, #3e6687); }
+.tile-8 { background: linear-gradient(160deg, #596273, #8b929d); }
+
+/* ==========================================================================
+   One orchestrated hero reveal — no scattered per-section animation
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal:nth-of-type(2) { animation-delay: 0.12s; }
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Accessibility basics
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #3e6687;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Contact page
+   Layout follows the reference: a big serif statement with an indented
+   opening name, then label + right-aligned contact blocks sitting on a
+   shared ~28% column line.
+   ========================================================================== */
+.statement {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 6.6vw, 6.25rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+}
+
+.statement-name {
+  display: block;
+  padding-left: 10%;
+  max-width: 88%;
+}
+
+@media (max-width: 639px) {
+  .statement-name {
+    padding-left: 0;
+    max-width: 100%;
+  }
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .contact-row {
+    grid-template-columns: 27.7% 1fr;
+    gap: 0;
+  }
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #8b929d;
+}
+
+.contact-block {
+  width: fit-content;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .contact-block {
+    margin-left: 7%;
+    text-align: right;
+  }
+}
+
+.contact-block a,
+.address-line {
+  display: block;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.2vw, 3.75rem);
+  line-height: 0.95;
+  overflow-wrap: anywhere;
+}
+
+.contact-block a {
+  transition: color 0.25s ease;
+}
+
+.contact-block a:hover {
+  color: #3e6687;
+}
+
+.address-line {
+  text-indent: 2.2em;
+}
+
+.address-line + .address-line {
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer-label {
+  color: #8b929d;
+}
+
+.footer-list a {
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+  color: #3e6687;
+}
+
+.wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: #111f33;
+}
+
+.wordmark text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  fill: currentColor;
+}
