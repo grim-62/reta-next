@@ -2,10 +2,12 @@
 
 import React from 'react'
 import "@/style/contact.css";
+import Navbar from '@/components/home/Navbar';
 
 export default function page  () {
   return (
     <>
+    <Navbar/>
         {/* <!-- =========================================================
          STATEMENT
          ========================================================= --> */}
