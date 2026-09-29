@@ -21,9 +21,15 @@ const Hero = () => {
       if (prefersReducedMotion) return;
 
       gsap.fromTo(
-        contentRef.current,
-        { autoAlpha: 0, y: 28 },
-        { autoAlpha: 1, y: 0, duration: 1, ease: "power3.out" },
+        contentRef.current.querySelectorAll(".hero-reveal-line"),
+        { yPercent: 110, autoAlpha: 0 },
+        {
+          yPercent: 0,
+          autoAlpha: 1,
+          duration: 1.1,
+          ease: "power3.out",
+          stagger: 0.14,
+        },
       );
 
       gsap.to(gridRef.current, {
@@ -63,11 +69,16 @@ const Hero = () => {
         className="relative z-10 text-white "
         // className="relative z-10 text-white mix-blend-difference"
       >
-        <p className="mb-3 text-xs">Est. 2026</p>
+        <p className="mb-3 overflow-hidden text-xs">
+          <span className="hero-reveal-line block">Est. 2026</span>
+        </p>
         <p className="max-w-full font-h text-[clamp(2.25rem,7vw,10rem)] leading-[.88]">
-          Revenue Edge
-          <br />
-          <span>finance &amp; accounting.</span>
+          <span className="-mb-[0.12em] block overflow-hidden pb-[0.12em]">
+            <span className="hero-reveal-line block">Revenue Edge</span>
+          </span>
+          <span className="-mb-[0.12em] block overflow-hidden pb-[0.12em]">
+            <span className="hero-reveal-line block">finance &amp; accounting.</span>
+          </span>
         </p>
       </div>
     </section>

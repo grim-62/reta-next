@@ -1,5 +1,6 @@
 import React from 'react'
 import "../../style/services.css";
+import ParallaxSection from "@/components/ui/ParallaxSection";
 
 export default function page() {
   return (
@@ -7,13 +8,18 @@ export default function page() {
     {/* <!-- =========================================================
          STATEMENT
          ========================================================= --> */}
-      <section class="px-5 pt-16 sm:px-8 sm:pt-24">
-        <h1 class="statement reveal">
-          <span class="statement-name">Revenue Edge Tax Accountants</span>
+      <ParallaxSection
+        image="https://plus.unsplash.com/premium_photo-1683141467643-dc67ba96b856?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        className="min-h-[82svh]"
+        contentClassName="flex items-end px-5 pb-16 pt-32 sm:px-8 sm:pb-24"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" aria-hidden="true" />
+        <h1 className="statement reveal relative max-w-6xl text-white">
+          <span className="statement-name">Revenue Edge Tax Accountants</span>
           is a practice driven by precision, clarity, and judgment — covering
           tax, accounting, and business advisory at every scale.
         </h1>
-      </section>
+      </ParallaxSection>
 
       {/* <!-- =========================================================
          CATEGORY OVERVIEW — three disciplines, each jumping to its

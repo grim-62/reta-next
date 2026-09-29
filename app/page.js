@@ -2,6 +2,8 @@ import Image from "next/image";
 import "../style/home.css";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
+import HeroBIGHEADLINE from "@/components/home/HeroBIGHEADLINE";
+import About from "@/components/home/About";
 
 export default function Home() {
   return (
@@ -11,81 +13,12 @@ export default function Home() {
       {/* <!-- =========================================================
        BIG HEADLINE
        ========================================================= --> */}
-      <section className="px-6 pb-16 pt-10 text-center sm:px-10 lg:px-14 lg:pt-10 ">
-        <h1 className="big-headline font-semibold font-n text-ink">
-          Precision, <br />
-          Clarity &amp; Confidence
-        </h1>
-
-        <div className="mx-auto mt-12 grid max-w-4xl gap-6 text-center sm:grid-cols-2 sm:gap-10 sm:text-left">
-          <p className="text-sm text-muted">
-            Tax &amp; Accounting Practice
-            <br />
-            Melbourne, Australia
-          </p>
-          <p className="max-w-sm text-sm leading-relaxed text-body">
-            We build financial clarity through direct advice, transparent fees,
-            and modern systems — precision without the noise.
-          </p>
-        </div>
-      </section>
-
-      {/* <!-- =========================================================
-       FULL-WIDTH PANEL (placeholder for office / team photography)
-       ========================================================= --> */}
-      <section className="">
-        <div className="relative flex h-[46vh] min-h-80 w-full items-end justify-center overflow-hidden rounded-sm">
-          <img
-            className="absolute inset-0 h-full w-full object-cover object-bottom"
-            src="https://plus.unsplash.com/premium_photo-1683120733115-b9f354c73f65?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-        </div>
-      </section>
+      <HeroBIGHEADLINE/>
 
       {/* <!-- =========================================================
        PRACTICE META ROW
        ========================================================= --> */}
-      <section id="practice" className="px-6 py-24 sm:px-10 lg:px-14 ">
-        <div className="mx-auto flex max-w-full flex-col gap-10 lg:flex-row lg:gap-14">
-          <div className="flex w-full flex-col gap-3 lg:w-1/2 font-n font-semibold text-xl">
-            About Revenue Edge —
-            <div className="flex flex-wrap gap-x-10 gap-y-2">
-              <p>Founder</p>
-              <p>Aish.au</p>
-            </div>
-            <div className="flex gap-x-10 gap-y-2">
-              <p>services</p>
-              <p className="md:w-1/2">
-                Tax planning, accounting systems, business advisory, compliance
-                reporting, and forecasting.
-              </p>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2">
-            <p className="max-w-5xl text-[clamp(1.7rem,4.5vw,35.5px)] font-normal leading-[1.15] text-body font-h">
-              A tax and accounting practice built on precision and clarity. We
-              create transparent, thoughtful financial systems tailored to your
-              business—from compliance to strategy. We work alongside business
-              owners at every stage of growth, turning complex obligations into
-              clear, practical decisions. Our advice is responsive, considered,
-              and focused on what matters most.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 sm:px-10 lg:px-14">
-        <div className="mx-auto max-w-full">
-          <p className="responsive-copy max-w-full font-h indent-20">
-            Your finances deserve more than numbers. they deserve clarity,
-            integrity, add commitment. We Build trust in every decision.
-            {/* <!-- We work alongside business owners at every stage of growth, turning
-          complex obligations into clear, practical decisions. Our advice is
-          responsive, considered, and focused on what matters most. --> */}
-          </p>
-        </div>
-      </section>
+      <About/>
       
       <Services />
 
