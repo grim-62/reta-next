@@ -2,16 +2,14 @@
 
 import React from "react";
 import "@/style/contact.css";
-import Navbar from "@/components/home/Navbar";
 
 export default function page() {
   return (
     <>
-      <Navbar />
       {/* <!-- =========================================================
          STATEMENT
          ========================================================= --> */}
-      <section className="px-5 pt-16 sm:px-8 sm:pt-24">
+      <section className="px-5 pt-20 sm:px-8 sm:pt-24">
         <h1 className="statement reveal font-h">
           <span className="statement-name ">Revenue Edge Tax Accountants</span>
           is a tax and accounting practice driven by clarity, precision, and

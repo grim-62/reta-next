@@ -205,6 +205,7 @@ export default function Services() {
             return (
               <article
                 key={service.ref}
+                id={`service-${service.ref}`}
                 className="service-panel"
                 ref={addPanelRef}
               >

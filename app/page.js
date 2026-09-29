@@ -1,19 +1,17 @@
 import Image from "next/image";
 import "../style/home.css";
 import Hero from "@/components/home/Hero";
-import Navbar from "@/components/home/Navbar";
 import Services from "@/components/home/Services";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
 
       {/* <!-- =========================================================
        BIG HEADLINE
        ========================================================= --> */}
-      <section className="px-6 pb-16 pt-10 text-center sm:px-10 lg:px-14 lg:pt-10">
+      <section className="px-6 pb-16 pt-10 text-center sm:px-10 lg:px-14 lg:pt-10 ">
         <h1 className="big-headline font-semibold font-n text-ink">
           Precision, <br />
           Clarity &amp; Confidence
@@ -35,7 +33,7 @@ export default function Home() {
       {/* <!-- =========================================================
        FULL-WIDTH PANEL (placeholder for office / team photography)
        ========================================================= --> */}
-      <section className="px-6 sm:px-10 lg:px-14">
+      <section className="">
         <div className="relative flex h-[46vh] min-h-80 w-full items-end justify-center overflow-hidden rounded-sm">
           <img
             className="absolute inset-0 h-full w-full object-cover object-bottom"
@@ -48,13 +46,13 @@ export default function Home() {
       {/* <!-- =========================================================
        PRACTICE META ROW
        ========================================================= --> */}
-      <section id="practice" className="px-6 py-24 sm:px-10 lg:px-14">
+      <section id="practice" className="px-6 py-24 sm:px-10 lg:px-14 ">
         <div className="mx-auto flex max-w-full flex-col gap-10 lg:flex-row lg:gap-14">
           <div className="flex w-full flex-col gap-3 lg:w-1/2 font-n font-semibold text-xl">
             About Revenue Edge —
             <div className="flex flex-wrap gap-x-10 gap-y-2">
               <p>Founder</p>
-              <p>Founder name</p>
+              <p>Aish.au</p>
             </div>
             <div className="flex gap-x-10 gap-y-2">
               <p>services</p>
