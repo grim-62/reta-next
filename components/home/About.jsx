@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const practiceParagraph =
   "A tax and accounting practice built on precision and clarity. We create transparent, thoughtful financial systems tailored to your business—from compliance to strategy. We work alongside business owners at every stage of growth, turning complex obligations into clear, practical decisions. Our advice is responsive, considered, and focused on what matters most.";
-
 const About = () => {
   const practiceRef = useRef(null);
   const statementRef = useRef(null);
@@ -24,6 +23,8 @@ const About = () => {
       gsap.fromTo(
         practiceRef.current.querySelectorAll(".about-reveal"),
         { y: 48, autoAlpha: 0 },
+
+
         {
           y: 0,
           autoAlpha: 1,
